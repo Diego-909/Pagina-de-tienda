@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+.conteiner{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header{
+    display: flex;
+    align-items: center;
+    min-height: 70vh;
+    position: relative;
+}
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+.logo{
+    font-size: 25px;
+    color: aqua;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+.menu .navbar ul li a {
+    font-size: 10px;
+    padding: 20px;
+    font-weight: 600;
+    color: black;
+    display: block;
+
+}
+.menu .navbar ul li a:hover{
+    color: blueviolet;
+}
+#menu{
+    display: none;
+}
+.menu-icono{
+    width: 25px;
+}
+.menu label{
+    cursor: pointer;
+    display: none;    
+}
+.submenu{
+    position: relative;
+}
+#img-carrito {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+.submenu #carrito{
+    display: none;
+}
+.submenu:hover #carrito{
+    display: block;
+    position: absolute;
+    right: 0;
+    backdrop-filter: blur(10px);
+    top: 100%;
+    z-index: 1;
+    background-color: rgb(127, 184, 89);
+    padding: 20px;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 10);
+}
+table{
+    width: 100%;
+}
+th,td{
+    color: aliceblue;
+}
+.bg {
+    position: absolute;
+    width: 700px;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+.header-txt{
+    margin-top: 50px;
+}
