@@ -27,7 +27,7 @@
 }
 .logo{
     font-size: 25px;
-    color: aqua;
+    color: #63579b;
     text-transform: uppercase;
     font-weight: 200;
 }
@@ -94,4 +94,29 @@ th,td{
 }
 .header-txt{
     margin-top: 50px;
+}
+.header-txt h1{
+    font-size: 55px;
+    line-height: 65px;
+    margin-bottom: 35px;
+    color: #1d1d1b;
+}
+.header-txt p{
+    font-size: 16px;
+    color: #5e5e5e5e;
+    margin-bottom: 45px;
+}
+.header-txt span{
+   color: #63579b; 
+}
+.btn-1{
+    display: inline-block;
+    padding: 13px 45px;
+    border-radius: 25px;
+    background-color: #63579b;
+    color: aliceblue;
+}
+.header-img{
+    display: flexbox;
+    margin-top: 30px    ;
 }
