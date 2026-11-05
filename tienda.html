@@ -7,53 +7,53 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <img class="bg" src="img/placeholder1.svg" alt="">
-        <div class="m_conteiner">
-            <a href="#" class="logo">Logo</a>
-            <input type="checkbox" id="menu">
-            <label for="menu">
-                <div class="menu-icono">☰</div>
-            </label>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="index.html">INICIO</a></li>
-                    <li><a href="tienda.html">TIENDA</a></li>
-                    <li><a href="#">OFERTAS</a></li>
-                    <li><a href="#">HISTORIAL</a></li>
-                    <li><a href="#">AYUDA</a></li>
-                </ul>
-            </nav>
-            <div>
-                <ul>
-                    <li class="submenu">
-                        <img src="img/car-placeholder.svg" id="carrito" alt="carrito">
-                        <div id="carrito">
-                            <table id="lista-carrito">
-                                <thead>
-                                    <tr>
-                                        <th>imagen</th>
-                                        <th>nombre</th>
-                                        <th>precio</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody> <!-- dejamos esto vacion para completarlo en JavaScript-->
-                            </table>
-                            <a href="#" id="vaciar-carrito" class="btn-3">vaciar-carrito</a>
-                            <!--Este sera el futuro boton de borrar-->
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div> 
-    </header> 
+    <div class="barra">
+        <header class="header">
+            <div class="menu conteiner">
+                <a href="#" class="logo">Logo</a>
+                <input type="checkbox" id="menu">
+                <label for="menu">
+                    <div class="menu-icono">☰</div>
+                </label>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="index.html">INICIO</a></li>
+                        <li><a href="tienda.html">TIENDA</a></li>
+                        <li><a href="#">OFERTAS</a></li>
+                        <li><a href="#">HISTORIAL</a></li>
+                        <li><a href="#">AYUDA</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <ul>
+                        <li class="submenu">
+                            <img src="img/car-placeholder.svg" id="carrito" alt="carrito">
+                            <div id="carrito">
+                                <table id="lista-carrito">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Cantidad</th>
+                                            <th>Precio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody> <!-- dejamos esto vacion para completarlo en JavaScript-->
+                                </table>
+                                <a href="#" id="vaciar-carrito" class="btn-3">vaciar-carrito</a>
+                                <!--Este sera el futuro boton de borrar-->
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div> 
+        </header>
+    </div> 
     <script src="script.js"></script>
     
     <section class="productos">
         <main class="TIENDA">
         <h2>TIENDA</h2>
-
         <div class="box-conteiner" id="lista-1">
             <div class="box">
                 <img src="img/placeholder3.svg" alt="">
@@ -62,7 +62,6 @@
                     <p>[categoria]</p>
                     <p class="precio">100 pdolares</p>
                     <a href="#" class="agregar-carrito btn-3" data-id="1">agregar al carrito</a>
-
                 </div>
             </div>  
         </div>

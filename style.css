@@ -1,122 +1,414 @@
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
 }
-.conteiner{
+
+/* BARRA SUPERIOR */
+
+.barra {
+    background-color: #63579b;
+    height: 50px;
+    position: relative;
+    z-index: 1000;
+}
+
+.conteiner {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
 }
-.header{
-    display: flex;
-    align-items: center;
-    min-height: 70vh;
+
+/* HEADER */
+
+.header {
     position: relative;
+    min-height: 50px;
 }
-.menu{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+
+/* BOTONES */
+
+.btn-1,
+.agregar-carrito {
+    display: inline-block;
+    padding: 13px 35px;
+    border-radius: 25px;
+    background-color: #63579b;
+    color: aliceblue;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    z-index: 5;
+}
+
+.btn-1:hover,
+.agregar-carrito:hover {
+    background-color: #4d427e;
+}
+
+/* MENU */
+
+.menu {
+    position: relative;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 1000;
 }
-.logo{
+
+.logo {
     font-size: 25px;
-    color: #63579b;
+    color: #f0f0f0;
     text-transform: uppercase;
     font-weight: 200;
+    margin-left: 30px;
 }
+
 .menu .navbar ul li {
     position: relative;
     float: left;
 }
+
 .menu .navbar ul li a {
     font-size: 10px;
     padding: 20px;
     font-weight: 600;
-    color: black;
+    color: rgb(250, 250, 250);
     display: block;
+}
 
+.menu .navbar ul li a:hover {
+    color: rgb(169, 201, 179);
 }
-.menu .navbar ul li a:hover{
-    color: blueviolet;
-}
-#menu{
+
+#menu {
     display: none;
 }
-.menu-icono{
+
+.menu-icono {
     width: 25px;
 }
-.menu label{
+
+.menu label {
     cursor: pointer;
-    display: none;    
+    display: none;
 }
-.submenu{
+
+/* CARRITO */
+
+.submenu {
     position: relative;
 }
+
 #img-carrito {
     width: 40px;
     height: 40px;
     display: block;
+    cursor: pointer;
 }
-.submenu #carrito{
+
+.submenu #carrito {
     display: none;
 }
-.submenu:hover #carrito{
+
+.submenu:hover #carrito {
     display: block;
     position: absolute;
     right: 0;
-    backdrop-filter: blur(10px);
     top: 100%;
-    z-index: 1;
-    background-color: rgb(127, 184, 89);
+    z-index: 1001;
+    backdrop-filter: blur(10px);
+    background-color: rgb(132, 144, 199);
     padding: 20px;
     min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 10);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.10);
+    border-radius: 10px;
 }
-table{
+
+table {
     width: 100%;
+    border-collapse: collapse;
 }
-th,td{
+
+th, td {
     color: aliceblue;
+    padding: 8px;
+    text-align: center;
 }
-.bg {
-    position: absolute;
-    width: 700px;
-    top: 0;
-    right: 0;
-    z-index: -1;
+
+/* CONTENIDO PRINCIPAL */
+
+.header-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 350px);
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 65px 30px 30px;
 }
-.header-txt{
-    margin-top: 50px;
+
+.header-txt {
+    min-width: 0;
 }
-.header-txt h1{
-    font-size: 55px;
-    line-height: 65px;
+
+.header-txt h1 {
+    font-size: 65px;
+    line-height: 75px;
     margin-bottom: 35px;
     color: #1d1d1b;
 }
-.header-txt p{
-    font-size: 16px;
-    color: #5e5e5e5e;
+
+.header-txt p {
+    font-size: 18px;
+    color: #0000005e;
     margin-bottom: 45px;
 }
-.header-txt span{
-   color: #63579b; 
+
+/* IMAGEN PRINCIPAL */
+
+.header-img {
+    min-width: 0;
+    display: flex;
+    justify-content: center;
 }
-.btn-1{
-    display: inline-block;
-    padding: 13px 45px;
-    border-radius: 25px;
+
+.header-img img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+}
+
+/* PRODUCTOS RECIENTES */
+
+.header-content > .recientes {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+}
+
+.recientes {
+    position: relative;
+    z-index: 1;
+}
+
+.recientes h2 {
+    margin-bottom: 20px;
+}
+
+.recientes.content {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.reciente-1 {
+    position: relative;
+    text-align: center;
+    padding: 15px;
+}
+
+.reciente-1 img {
+    width: 100px;
+    max-width: 100%;
+    height: auto;
+}
+
+.reciente-1 h3 {
+    margin: 10px 0;
+}
+
+.precio {
+    color: #63579b;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* BOTONES DE PRODUCTOS */
+
+.agregar-carrito {
+    pointer-events: auto;
+    user-select: none;
+}
+
+/* FOOTER */
+
+.footer {
     background-color: #63579b;
     color: aliceblue;
+    padding: 35px 20px;
+    margin-top: 50px;
 }
-.header-img{
-    display: flexbox;
-    margin-top: 30px    ;
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-info h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-links h4 {
+    margin-bottom: 5px;
+}
+
+.footer-links a {
+    color: aliceblue;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #c5b9ff;
+}
+
+.footer-copy {
+    font-size: 13px;
+    text-align: right;
+    line-height: 1.8;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .menu {
+        padding: 0 15px;
+    }
+
+    .logo {
+        margin-left: 0;
+        font-size: 22px;
+    }
+
+    .menu label {
+        display: block;
+    }
+
+    .menu-icono {
+        color: white;
+        font-size: 25px;
+        width: auto;
+    }
+
+    /* MENU DESPLEGABLE */
+
+    .menu .navbar {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        background-color: #63579b;
+        display: none;
+        width: 100%;
+    }
+
+    .menu .navbar ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu .navbar ul li {
+        float: none;
+        width: 100%;
+    }
+
+    .menu .navbar ul li a {
+        display: block;
+        padding: 15px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    #menu:checked ~ .navbar {
+        display: block;
+    }
+
+    /* CONTENIDO */
+
+    .conteiner {
+        width: calc(100% - 30px);
+    }
+
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 50px 15px 30px;
+    }
+
+    .header-txt {
+        width: 100%;
+        text-align: center;
+    }
+
+    .header-txt h1 {
+        font-size: 38px;
+        line-height: 46px;
+        margin-bottom: 20px;
+    }
+
+    .header-txt p {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
+    .header-img {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .header-content > .recientes {
+        width: 100%;
+    }
+
+    .recientes.content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .reciente-1 {
+        text-align: center;
+    }
+
+    .reciente-1 img {
+        width: 80px;
+    }
+
+    .submenu:hover #carrito {
+        min-width: min(400px, calc(100vw - 30px));
+    }
+
+    /* FOOTER RESPONSIVE */
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-copy {
+        text-align: center;
+    }
+
 }
