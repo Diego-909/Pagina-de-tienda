@@ -15,7 +15,7 @@ botones.forEach(boton => {
         e.preventDefault();
 
         // Obtenemos el contenedor del producto
-        const producto = this.parentElement;
+        const producto = this.closest(".reciente-1, .box");
 
         // Obtenemos sus datos
         const nombre = producto.querySelector("h3").textContent;
@@ -54,6 +54,9 @@ botones.forEach(boton => {
 // Actualizamos el carrito
 function actualizarCarrito() {
 
+    // Comprobamos que exista la tabla
+    if (!listaCarrito || !totalHTML) return;
+
     // Limpiamos la tabla
     listaCarrito.innerHTML = "";
 
@@ -70,7 +73,7 @@ function actualizarCarrito() {
         const fila = document.createElement("tr");
 
         fila.innerHTML = `
-            <td><img src="${producto.imagen}" width="40"></td>
+            <td><img src="${producto.imagen}" width="40" alt="${producto.nombre}"></td>
             <td>${producto.nombre}</td>
             <td>${producto.cantidad}</td>
             <td>S/ ${subtotal.toFixed(2)}</td>
@@ -86,12 +89,16 @@ function actualizarCarrito() {
 }
 
 // Botón para vaciar el carrito
-vaciarCarrito.addEventListener("click", function(e) {
+if (vaciarCarrito) {
 
-    e.preventDefault();
+    vaciarCarrito.addEventListener("click", function(e) {
 
-    carrito = [];
+        e.preventDefault();
 
-    actualizarCarrito();
+        carrito = [];
 
-});
+        actualizarCarrito();
+
+    });
+
+}
