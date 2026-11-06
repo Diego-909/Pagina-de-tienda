@@ -1,4 +1,15 @@
-
+:root {
+    --color-principal:#63579b;
+    --color-principal-hover:#4d427e;
+    --color-secundario:#a9c9b3;
+    --color-fondo-carrito:rgba(132,144,199,0.95);
+    --color-texto-oscuro:#1d1d1b;
+    --color-texto-suave:rgba(0,0,0,0.6);
+    --color-blanco:#f0f0f0;
+    
+    --fuente-base:'segoe UI',system-ui,sans-serif;
+    --radio-border:25px;
+    --espacio-contenedor:1200px;
 * {
     margin: 0;
     padding: 0;
