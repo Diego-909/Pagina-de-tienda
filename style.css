@@ -50,7 +50,7 @@ body {
 .agregar-carrito {
     display: inline-block;
     padding: 13px 35px;
-    border-radius: var(--radio-borde);
+    border-radius: var(--radio-border);
     background-color:var(--color-principal);
     color:var(--color-blanco);
     font-size: 14px;
@@ -183,7 +183,7 @@ th, td {
 
 .header-txt p {
     font-size: 18px;
-    color:var(--color-texto-sueve);
+    color:var(--color-texto-suave);
     margin-bottom: 45px;
 }
 
