@@ -12,7 +12,7 @@ botones.forEach(boton => {
 
     boton.addEventListener("click", function(e) {
 
-        e.preventDefault();
+        e.preventDefault(); 
 
         // Obtenemos el contenedor del producto
         const producto = this.closest(".reciente-1, .box");
