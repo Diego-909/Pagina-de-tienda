@@ -1,5 +1,5 @@
-
-let carrito = [];
+//Funcion para guardar carrito
+let carrito = JSON.parse(localStorage.getItem("carrito"))||[];
 
 // Seleccionamos los elementos del HTML
 const botones = document.querySelectorAll(".agregar-carrito");
@@ -12,10 +12,11 @@ botones.forEach(boton => {
 
     boton.addEventListener("click", function(e) {
 
-        e.preventDefault(); 
+        e.preventDefault();
 
         // Obtenemos el contenedor del producto
         const producto = this.closest(".reciente-1, .box");
+        if (!producto) return;
 
         // Obtenemos sus datos
         const nombre = producto.querySelector("h3").textContent;
@@ -54,6 +55,9 @@ botones.forEach(boton => {
 // Actualizamos el carrito
 function actualizarCarrito() {
 
+
+    //Guarda el carrito en el localstorage
+    localStorage.setItem("carrito", JSON.stringify(carrito))
     // Comprobamos que exista la tabla
     if (!listaCarrito || !totalHTML) return;
 
@@ -102,3 +106,5 @@ if (vaciarCarrito) {
     });
 
 }
+//Recupar y mostrar el carrito 
+actualizarCarrito();
