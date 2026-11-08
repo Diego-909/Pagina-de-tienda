@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo | CelMarket</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="barra conteiner">
+            <a href="index.html" class="logo" aria-label="CelMarket, ir al inicio">
+                <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect x="9" y="2" width="14" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="16" cy="25" r="1.8" fill="var(--color-acento)"/></svg>
+                <span>CelMarket</span>
+            </a>
+            <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">☰</button>
+            <nav id="nav" class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tienda.html" aria-current="page">Catálogo</a></li>
+                    <li><a href="carrito.html">Carrito (<span class="contador">0</span>)</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="conteiner">
+            <h1>Catálogo</h1>
+            <div class="filtros">
+                <label>Buscar por nombre
+                    <input type="search" id="buscador" placeholder="Ejemplo: Galaxy">
+                </label>
+                <label>Categoría
+                    <select id="categoria"><option value="todas">Todas</option></select>
+                </label>
+            </div>
+            <div id="catalogo" class="grid"></div>
+        </section>
+        <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" hidden>
+            <div class="modal-caja">
+                <button class="cerrar btn btn-sec" aria-label="Cerrar detalle">Cerrar</button>
+                <div id="modal-cuerpo" class="modal-cuerpo"></div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer"><div class="conteiner">CelMarket · Celulares nuevos con garantía · Precios en soles, IGV incluido</div></footer>
+    <p id="aviso" class="aviso" role="status" aria-live="polite"></p>
+    <script src="js/datos.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/tienda.js"></script>
+</body>
+</html>
