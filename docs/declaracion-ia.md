@@ -1,1 +1,0 @@
-En este proyecto se uso IA para avanzar con el proyecto 

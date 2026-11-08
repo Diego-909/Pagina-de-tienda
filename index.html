@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Inicio · TiendaPe</title>
-<link rel="stylesheet" href="css/estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | CelMarket</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="cabecera"><a class="logo" href="index.html">TiendaPe</a>
-<nav><a href="index.html">Inicio</a> <a href="catalogo.html">Catálogo</a> <a href="contacto.html">Contacto</a> <a href="carrito.html">Carrito (<span id="contador">0</span>)</a></nav></header>
-<main>
-<section class="hero"><h1>Tecnología al mejor precio</h1><p>Audio, cómputo y accesorios con envío a todo el Perú.</p><a class="btn" href="catalogo.html">Ver catálogo</a></section>
-</main>
-<footer class="pie">&copy; 2026 TiendaPe</footer>
-<script src="js/datos.js"></script>
-<script src="js/tienda.js"></script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Inicio · TiendaPe</title>
-<link rel="stylesheet" href="css/estilos.css">
-</head>
-<body>
-<header class="cabecera"><a class="logo" href="index.html">TiendaPe</a>
-<nav><a href="index.html">Inicio</a> <a href="catalogo.html">Catálogo</a> <a href="contacto.html">Contacto</a> <a href="carrito.html">Carrito (<span id="contador">0</span>)</a></nav></header>
-<main>
-<section class="hero"><h1>Tecnología al mejor precio</h1><p>Audio, cómputo y accesorios con envío a todo el Perú.</p><a class="btn" href="catalogo.html">Ver catálogo</a></section>
-</main>
-<footer class="pie">&copy; 2026 TiendaPe</footer>
-<script src="js/datos.js"></script>
-<script src="js/tienda.js"></script>
+    <header class="header">
+        <div class="barra conteiner">
+            <a href="index.html" class="logo" aria-label="CelMarket, ir al inicio">
+                <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect x="9" y="2" width="14" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="16" cy="25" r="1.8" fill="var(--color-acento)"/></svg>
+                <span>CelMarket</span>
+            </a>
+            <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">☰</button>
+            <nav id="nav" class="navbar">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Inicio</a></li>
+                    <li><a href="tienda.html">Catálogo</a></li>
+                    <li><a href="carrito.html">Carrito (<span class="contador">0</span>)</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero conteiner">
+            <div>
+                <h1>Tu próximo celular, al precio justo</h1>
+                <p>Gama baja, media y alta con garantía y envío gratis desde S/ 1500.</p>
+                <a href="tienda.html" class="btn">Ver catálogo</a>
+            </div>
+            <img src="img/galaxy-s24.jpg" alt="Ilustración de un celular">
+        </section>
+        <section class="conteiner">
+            <h2>Más buscados</h2>
+            <div id="destacados" class="grid"></div>
+        </section>
+    </main>
+    <footer class="footer"><div class="conteiner">CelMarket · Celulares nuevos con garantía · Precios en soles, IGV incluido</div></footer>
+    <p id="aviso" class="aviso" role="status" aria-live="polite"></p>
+    <script src="js/datos.js"></script>
+    <script src="js/comun.js"></script>
 
 </body>
 </html>

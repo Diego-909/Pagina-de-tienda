@@ -1,28 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contacto · TiendaPe</title>
-<link rel="stylesheet" href="css/estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | CelMarket</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="cabecera"><a class="logo" href="index.html">TiendaPe</a>
-<nav><a href="index.html">Inicio</a> <a href="catalogo.html">Catálogo</a> <a href="contacto.html">Contacto</a> <a href="carrito.html">Carrito (<span id="contador">0</span>)</a></nav></header>
-<main>
-<h1>Contacto</h1>
-<form id="form" class="formulario" novalidate>
-<label for="nombre">Nombre</label><input id="nombre" name="nombre"><span class="error" id="err-nombre"></span>
-<label for="correo">Correo</label><input id="correo" name="correo" type="email"><span class="error" id="err-correo"></span>
-<label for="telefono">Celular</label><input id="telefono" name="telefono" maxlength="9"><span class="error" id="err-telefono"></span>
-<label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" rows="4"></textarea><span class="error" id="err-mensaje"></span>
-<button class="btn" type="submit">Enviar</button>
-<p id="exito" class="exito"></p>
-</form>
-</main>
-<footer class="pie">&copy; 2026 TiendaPe</footer>
-<script src="js/datos.js"></script>
-<script src="js/tienda.js"></script>
-<script src="js/contacto.js"></script>
+    <header class="header">
+        <div class="barra conteiner">
+            <a href="index.html" class="logo" aria-label="CelMarket, ir al inicio">
+                <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect x="9" y="2" width="14" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="16" cy="25" r="1.8" fill="var(--color-acento)"/></svg>
+                <span>CelMarket</span>
+            </a>
+            <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">☰</button>
+            <nav id="nav" class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tienda.html">Catálogo</a></li>
+                    <li><a href="carrito.html">Carrito (<span class="contador">0</span>)</a></li>
+                    <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="conteiner">
+            <h1>Contacto</h1>
+            <form id="form-contacto" class="formulario" novalidate>
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" aria-describedby="error-nombre" aria-invalid="false">
+                <span class="error" id="error-nombre"></span>
+
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" name="correo" aria-describedby="error-correo" aria-invalid="false">
+                <span class="error" id="error-correo"></span>
+
+                <label for="telefono">Celular</label>
+                <input type="tel" id="telefono" name="telefono" aria-describedby="error-telefono" aria-invalid="false">
+                <span class="error" id="error-telefono"></span>
+
+                <label for="mensaje">Mensaje <small id="contador-mensaje"></small></label>
+                <textarea id="mensaje" name="mensaje" rows="4" maxlength="300" aria-describedby="error-mensaje" aria-invalid="false"></textarea>
+                <span class="error" id="error-mensaje"></span>
+
+                <button type="submit" class="btn">Enviar mensaje</button>
+                <p id="exito" role="status"></p>
+            </form>
+        </section>
+    </main>
+    <footer class="footer"><div class="conteiner">CelMarket · Celulares nuevos con garantía · Precios en soles, IGV incluido</div></footer>
+    <p id="aviso" class="aviso" role="status" aria-live="polite"></p>
+    <script src="js/datos.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/formulario.js"></script>
 </body>
 </html>
