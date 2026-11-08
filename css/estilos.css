@@ -1,13 +1,4 @@
-:root {
-  --color-primario: #0f4c5c;
-  --color-acento: #ffb703;
-  --color-fondo: #f3f7f8;
-  --color-superficie: #ffffff;
-  --color-texto: #14262c;
-  --color-borde: #cfdde0;
-  --color-error: #b00020;
-  --radio: 10px;
-}
+
 * { box-sizing: border-box; margin: 0; }
 body { font-family: "Trebuchet MS", system-ui, sans-serif; background: var(--color-fondo); color: var(--color-texto); line-height: 1.5; }
 img { max-width: 100%; display: block; }
