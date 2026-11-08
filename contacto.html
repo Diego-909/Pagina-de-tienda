@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto · TiendaPe</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<header class="cabecera"><a class="logo" href="index.html">TiendaPe</a>
+<nav><a href="index.html">Inicio</a> <a href="catalogo.html">Catálogo</a> <a href="contacto.html">Contacto</a> <a href="carrito.html">Carrito (<span id="contador">0</span>)</a></nav></header>
+<main>
+<h1>Contacto</h1>
+<form id="form" class="formulario" novalidate>
+<label for="nombre">Nombre</label><input id="nombre" name="nombre"><span class="error" id="err-nombre"></span>
+<label for="correo">Correo</label><input id="correo" name="correo" type="email"><span class="error" id="err-correo"></span>
+<label for="telefono">Celular</label><input id="telefono" name="telefono" maxlength="9"><span class="error" id="err-telefono"></span>
+<label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" rows="4"></textarea><span class="error" id="err-mensaje"></span>
+<button class="btn" type="submit">Enviar</button>
+<p id="exito" class="exito"></p>
+</form>
+</main>
+<footer class="pie">&copy; 2026 TiendaPe</footer>
+<script src="js/datos.js"></script>
+<script src="js/tienda.js"></script>
+<script src="js/contacto.js"></script>
+</body>
+</html>

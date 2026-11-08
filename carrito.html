@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carrito · TiendaPe</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<header class="cabecera"><a class="logo" href="index.html">TiendaPe</a>
+<nav><a href="index.html">Inicio</a> <a href="catalogo.html">Catálogo</a> <a href="contacto.html">Contacto</a> <a href="carrito.html">Carrito (<span id="contador">0</span>)</a></nav></header>
+<main>
+<h1>Tu carrito</h1>
+<p id="vacio" hidden>Tu carrito está vacío. <a href="catalogo.html">Ir al catálogo</a></p>
+<div id="lleno" class="carrito">
+<table><thead><tr><th>Producto</th><th>Precio</th><th>Cant.</th><th>Subtotal</th><th></th></tr></thead><tbody id="lineas"></tbody></table>
+<aside class="resumen">
+<h2>Resumen</h2>
+<form id="form-cupon"><input id="cupon" placeholder="Cupón (DESC10)" aria-label="Cupón"> <button class="btn" type="submit">Aplicar</button></form>
+<p id="msg-cupon"></p>
+<div id="totales"></div>
+<button type="button" class="btn" id="vaciar">Vaciar carrito</button>
+</aside>
+</div>
+</main>
+<footer class="pie">&copy; 2026 TiendaPe</footer>
+<script src="js/datos.js"></script>
+<script src="js/tienda.js"></script>
+<script src="js/carrito.js"></script>
+</body>
+</html>
