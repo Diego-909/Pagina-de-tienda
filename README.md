@@ -2,7 +2,6 @@
 
 Tienda de celulares con carrito de compras. Proyecto de Diseño Web (Universidad Continental) · **Avance al 60 %**.
 
-- **Sitio publicado:** [COMPLETAR: URL de GitHub Pages]
 - **Versión de Bootstrap:** 5.3.9 (copiada en `vendor/`, único framework de CSS)
 - **Etiqueta:** v0.6
 - **Cupón de prueba:** `CEL10` (10 %) · Envío gratis desde S/ 1500 · IGV 18 % incluido
