@@ -2,54 +2,113 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Carrito | CelMarket</title>
+    <!-- 1. Bootstrap 5.3.9 primero; 2. la marca después, para poder sobrescribirlo -->
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/marca.css">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body>
-    <header class="header">
-        <div class="barra conteiner">
-            <a href="index.html" class="logo" aria-label="CelMarket, ir al inicio">
-                <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect x="9" y="2" width="14" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="16" cy="25" r="1.8" fill="var(--color-acento)"/></svg>
-                <span>CelMarket</span>
-            </a>
-            <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">☰</button>
-            <nav id="nav" class="navbar">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="tienda.html">Catálogo</a></li>
-                    <li><a href="carrito.html" aria-current="page">Carrito (<span class="contador">0</span>)</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
+<body class="d-flex flex-column min-vh-100">
+    <a class="visually-hidden-focusable position-absolute bg-white p-2" href="#contenido">Saltar al contenido</a>
+
+    <header>
+        <nav class="navbar navbar-expand-md" data-bs-theme="dark" aria-label="Principal">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">CelMarket</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto align-items-md-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tienda.html">Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="carrito.html" aria-current="page">Carrito</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    </ul>
+                    <button class="btn btn-warning ms-md-3 mt-2 mt-md-0" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#carrito-lateral" aria-controls="carrito-lateral">
+                        Mi carrito <span class="badge text-bg-dark contador">0</span><span class="visually-hidden"> productos</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
     </header>
-    <main>
-        <section class="conteiner">
-            <h1>Tu carrito</h1>
-            <div class="tabla-scroll">
-                <table class="tabla">
-                    <thead><tr><th>Producto</th><th>Precio</th><th>Cantidad</th><th>Subtotal</th><th></th></tr></thead>
+
+    <main id="contenido" class="flex-grow-1">
+
+        <section class="container py-3">
+            <h1 class="mb-3">Tu carrito</h1>
+
+            <div class="table-responsive mb-4">
+                <table class="table table-striped align-middle">
+                    <caption class="visually-hidden">Productos en tu carrito</caption>
+                    <thead class="table-primary">
+                        <tr><th scope="col">Producto</th><th scope="col">Precio</th><th scope="col">Cantidad</th><th scope="col">Subtotal</th><th scope="col"><span class="visually-hidden">Acciones</span></th></tr>
+                    </thead>
                     <tbody id="cuerpo-carrito"></tbody>
                 </table>
             </div>
-            <div class="carrito-pie">
-                <form id="form-cupon" class="cupon">
-                    <label>Cupón de descuento
-                        <input type="text" id="cupon" placeholder="CEL10">
-                    </label>
-                    <button type="submit" class="btn">Aplicar cupón</button>
-                    <p id="mensaje-cupon" role="status"></p>
-                </form>
-                <div>
-                    <dl id="resumen" class="resumen"></dl>
-                    <button id="vaciar" class="btn btn-sec" type="button">Vaciar carrito</button>
+
+            <div class="row g-4">
+                <div class="col-12 col-md-6">
+                    <form id="form-cupon" class="card card-body">
+                        <label for="cupon" class="form-label fw-bold">Cupón de descuento</label>
+                        <div class="input-group">
+                            <input type="text" id="cupon" class="form-control" placeholder="CEL10" autocomplete="off">
+                            <button type="submit" class="btn btn-primary">Aplicar cupón</button>
+                        </div>
+                        <p id="mensaje-cupon" class="mt-2 mb-0" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="card card-body">
+                        <h2 class="h5">Resumen de compra</h2>
+                        <dl id="resumen" class="resumen"></dl>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a id="ir-checkout" href="checkout.html" class="btn btn-primary">Finalizar compra</a>
+                            <button id="vaciar" class="btn btn-outline-danger" type="button">Vaciar carrito</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
     </main>
-    <footer class="footer"><div class="conteiner">CelMarket · Celulares nuevos con garantía · Precios en soles, IGV incluido</div></footer>
-    <p id="aviso" class="aviso" role="status" aria-live="polite"></p>
+
+    <footer class="bg-primary text-white py-3 small">
+        <div class="container">
+            CelMarket · Celulares nuevos con garantía · Precios en soles, IGV incluido
+        </div>
+    </footer>
+
+    <!-- Carrito lateral (offcanvas) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="carrito-lateral" aria-labelledby="carrito-titulo">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title h5" id="carrito-titulo">Tu carrito</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div id="carrito-lineas"></div>
+            <div id="carrito-pie" class="mt-auto pt-3" hidden>
+                <p class="fs-5 fw-bold d-flex justify-content-between">Total estimado <span id="carrito-total"></span></p>
+                <div class="d-grid gap-2">
+                    <a href="checkout.html" class="btn btn-primary">Finalizar compra</a>
+                    <a href="carrito.html" class="btn btn-outline-primary">Ver carrito completo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aviso (toast) -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="toast-aviso" class="toast text-bg-dark" role="status" aria-live="polite" aria-atomic="true">
+            <div class="toast-body"></div>
+        </div>
+    </div>
+
+    <script src="vendor/bootstrap.bundle.min.js"></script>
     <script src="js/datos.js"></script>
     <script src="js/comun.js"></script>
     <script src="js/carrito-pagina.js"></script>

@@ -2,55 +2,113 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Contacto | CelMarket</title>
+    <!-- 1. Bootstrap 5.3.9 primero; 2. la marca después, para poder sobrescribirlo -->
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/marca.css">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body>
-    <header class="header">
-        <div class="barra conteiner">
-            <a href="index.html" class="logo" aria-label="CelMarket, ir al inicio">
-                <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect x="9" y="2" width="14" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="16" cy="25" r="1.8" fill="var(--color-acento)"/></svg>
-                <span>CelMarket</span>
-            </a>
-            <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">☰</button>
-            <nav id="nav" class="navbar">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="tienda.html">Catálogo</a></li>
-                    <li><a href="carrito.html">Carrito (<span class="contador">0</span>)</a></li>
-                    <li><a href="contacto.html" aria-current="page">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
+<body class="d-flex flex-column min-vh-100">
+    <a class="visually-hidden-focusable position-absolute bg-white p-2" href="#contenido">Saltar al contenido</a>
+
+    <header>
+        <nav class="navbar navbar-expand-md" data-bs-theme="dark" aria-label="Principal">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">CelMarket</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto align-items-md-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tienda.html">Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="contacto.html" aria-current="page">Contacto</a></li>
+                    </ul>
+                    <button class="btn btn-warning ms-md-3 mt-2 mt-md-0" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#carrito-lateral" aria-controls="carrito-lateral">
+                        Mi carrito <span class="badge text-bg-dark contador">0</span><span class="visually-hidden"> productos</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
     </header>
-    <main>
-        <section class="conteiner">
-            <h1>Contacto</h1>
-            <form id="form-contacto" class="formulario" novalidate>
-                <label for="nombre">Nombre completo</label>
-                <input type="text" id="nombre" name="nombre" aria-describedby="error-nombre" aria-invalid="false">
-                <span class="error" id="error-nombre"></span>
 
-                <label for="correo">Correo</label>
-                <input type="email" id="correo" name="correo" aria-describedby="error-correo" aria-invalid="false">
-                <span class="error" id="error-correo"></span>
+    <main id="contenido" class="flex-grow-1">
 
-                <label for="telefono">Celular</label>
-                <input type="tel" id="telefono" name="telefono" aria-describedby="error-telefono" aria-invalid="false">
-                <span class="error" id="error-telefono"></span>
-
-                <label for="mensaje">Mensaje <small id="contador-mensaje"></small></label>
-                <textarea id="mensaje" name="mensaje" rows="4" maxlength="300" aria-describedby="error-mensaje" aria-invalid="false"></textarea>
-                <span class="error" id="error-mensaje"></span>
-
-                <button type="submit" class="btn">Enviar mensaje</button>
-                <p id="exito" role="status"></p>
-            </form>
+        <section class="container py-4">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="card shadow-sm p-4">
+                        <h1 class="text-center mb-4 h2">Contacto</h1>
+                        <form id="form-contacto" novalidate>
+                            
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" class="form-control" aria-describedby="error-nombre" aria-invalid="false" autocomplete="name">
+                            <div class="invalid-feedback" id="error-nombre"></div>
+                        </div>
+                            
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">Correo</label>
+                            <input type="email" id="correo" name="correo" class="form-control" aria-describedby="error-correo" aria-invalid="false" autocomplete="email">
+                            <div class="invalid-feedback" id="error-correo"></div>
+                        </div>
+                            
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Celular</label>
+                            <input type="tel" id="telefono" name="telefono" class="form-control" aria-describedby="error-telefono" aria-invalid="false" autocomplete="tel" inputmode="numeric">
+                            <div class="invalid-feedback" id="error-telefono"></div>
+                        </div>
+                            <div class="mb-3">
+                                <label for="mensaje" class="form-label">Mensaje <small id="contador-mensaje"></small></label>
+                                <textarea id="mensaje" name="mensaje" class="form-control" rows="4" maxlength="300" aria-describedby="error-mensaje" aria-invalid="false"></textarea>
+                                <div class="invalid-feedback" id="error-mensaje"></div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Enviar mensaje</button>
+                            <p id="exito" class="fw-bold text-success mt-3 mb-0" role="status"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </section>
+
     </main>
-    <footer class="footer"><div class="conteiner">CelMarket · Celulares nuevos con garantía · Precios en soles, IGV incluido</div></footer>
-    <p id="aviso" class="aviso" role="status" aria-live="polite"></p>
+
+    <footer class="bg-primary text-white py-3 small">
+        <div class="container">
+            CelMarket · Celulares nuevos con garantía · Precios en soles, IGV incluido
+        </div>
+    </footer>
+
+    <!-- Carrito lateral (offcanvas) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="carrito-lateral" aria-labelledby="carrito-titulo">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title h5" id="carrito-titulo">Tu carrito</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div id="carrito-lineas"></div>
+            <div id="carrito-pie" class="mt-auto pt-3" hidden>
+                <p class="fs-5 fw-bold d-flex justify-content-between">Total estimado <span id="carrito-total"></span></p>
+                <div class="d-grid gap-2">
+                    <a href="checkout.html" class="btn btn-primary">Finalizar compra</a>
+                    <a href="carrito.html" class="btn btn-outline-primary">Ver carrito completo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aviso (toast) -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="toast-aviso" class="toast text-bg-dark" role="status" aria-live="polite" aria-atomic="true">
+            <div class="toast-body"></div>
+        </div>
+    </div>
+
+    <script src="vendor/bootstrap.bundle.min.js"></script>
     <script src="js/datos.js"></script>
     <script src="js/comun.js"></script>
     <script src="js/formulario.js"></script>

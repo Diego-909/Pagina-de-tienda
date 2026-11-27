@@ -1,0 +1,72 @@
+/* marca.css — se carga DESPUÉS de Bootstrap y le pone la identidad de CelMarket */
+:root {
+  --color-primario: #0f4c5c;
+  --color-primario-oscuro: #0a3642;
+  --color-acento: #ffb703;
+  --color-acento-oscuro: #e6a200;
+  --color-fondo: #f3f7f8;
+  --color-texto: #14262c;
+  --color-error: #b00020;
+
+  --bs-body-font-family: "Trebuchet MS", system-ui, "Segoe UI", Roboto, sans-serif;
+  --bs-body-bg: var(--color-fondo);
+  --bs-body-color: var(--color-texto);
+  --bs-primary: #0f4c5c;
+  --bs-primary-rgb: 15, 76, 92;
+  --bs-link-color-rgb: 15, 76, 92;
+  --bs-link-hover-color-rgb: 10, 54, 66;
+  --bs-form-invalid-color: var(--color-error);
+  --bs-form-invalid-border-color: var(--color-error);
+}
+
+/* Bootstrap 5.3 expone variables por componente: se cambian aquí, sin !important */
+.btn-primary {
+  --bs-btn-bg: var(--color-primario);
+  --bs-btn-border-color: var(--color-primario);
+  --bs-btn-hover-bg: var(--color-primario-oscuro);
+  --bs-btn-hover-border-color: var(--color-primario-oscuro);
+  --bs-btn-active-bg: var(--color-primario-oscuro);
+  --bs-btn-active-border-color: var(--color-primario-oscuro);
+  --bs-btn-disabled-bg: var(--color-primario);
+  --bs-btn-disabled-border-color: var(--color-primario);
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--color-primario);
+  --bs-btn-border-color: var(--color-primario);
+  --bs-btn-hover-bg: var(--color-primario);
+  --bs-btn-hover-border-color: var(--color-primario);
+  --bs-btn-active-bg: var(--color-primario-oscuro);
+  --bs-btn-active-border-color: var(--color-primario-oscuro);
+}
+.btn-warning {
+  --bs-btn-bg: var(--color-acento);
+  --bs-btn-border-color: var(--color-acento);
+  --bs-btn-color: var(--color-texto);
+  --bs-btn-hover-bg: var(--color-acento-oscuro);
+  --bs-btn-hover-border-color: var(--color-acento-oscuro);
+  --bs-btn-hover-color: var(--color-texto);
+  --bs-btn-active-bg: var(--color-acento-oscuro);
+  --bs-btn-active-border-color: var(--color-acento-oscuro);
+  --bs-btn-active-color: var(--color-texto);
+}
+.progress { --bs-progress-bar-bg: var(--color-primario); }
+
+.navbar[data-bs-theme="dark"] {   /* igual de específico que la regla de Bootstrap */
+  background-color: var(--color-primario);
+  --bs-navbar-color: rgba(255, 255, 255, .9);   /* el gris por defecto no da 4.5:1 */
+  --bs-navbar-hover-color: var(--color-acento);
+  --bs-navbar-active-color: var(--color-acento);
+}
+
+/* Foco siempre visible al navegar con teclado */
+:focus-visible { outline: 3px solid var(--color-acento); outline-offset: 2px; }
+.card :focus-visible, .modal :focus-visible, .offcanvas :focus-visible { outline-color: var(--color-primario); }
+
+/* Respetar a quien pidió menos movimiento en su sistema */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

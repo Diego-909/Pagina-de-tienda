@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Finalizar compra | CelMarket</title>
+    <!-- 1. Bootstrap 5.3.9 primero; 2. la marca después, para poder sobrescribirlo -->
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/marca.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <a class="visually-hidden-focusable position-absolute bg-white p-2" href="#contenido">Saltar al contenido</a>
+
+    <header>
+        <nav class="navbar navbar-expand-md" data-bs-theme="dark" aria-label="Principal">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">CelMarket</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto align-items-md-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tienda.html">Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    </ul>
+                    <button class="btn btn-warning ms-md-3 mt-2 mt-md-0" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#carrito-lateral" aria-controls="carrito-lateral">
+                        Mi carrito <span class="badge text-bg-dark contador">0</span><span class="visually-hidden"> productos</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="contenido" class="flex-grow-1">
+
+        <section class="container py-3" style="max-width: 760px;">
+            <h1 class="mb-3">Finalizar compra</h1>
+
+            <form id="checkout" novalidate>
+                <section data-paso="1" aria-labelledby="t1" class="card card-body">
+                    <h2 id="t1" class="h4" tabindex="-1">Paso 1 de 3 · Datos de envío</h2>
+                    <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre completo</label>
+                            <input id="nombre" name="nombre" class="form-control" aria-describedby="error-nombre" autocomplete="name">
+                            <div id="error-nombre" class="invalid-feedback"></div>
+                        </div>
+                    <div class="mb-3">
+                            <label for="celular" class="form-label">Celular</label>
+                            <input id="celular" name="celular" class="form-control" aria-describedby="error-celular" inputmode="numeric" autocomplete="tel">
+                            <div id="error-celular" class="invalid-feedback"></div>
+                        </div>
+                    <div class="mb-3">
+                            <label for="direccion" class="form-label">Dirección</label>
+                            <input id="direccion" name="direccion" class="form-control" aria-describedby="error-direccion" autocomplete="street-address">
+                            <div id="error-direccion" class="invalid-feedback"></div>
+                        </div>
+                    <div class="mb-3">
+                            <label for="distrito" class="form-label">Distrito</label>
+                            <input id="distrito" name="distrito" class="form-control" aria-describedby="error-distrito" autocomplete="address-level2">
+                            <div id="error-distrito" class="invalid-feedback"></div>
+                        </div>
+                    <div><button type="button" class="btn btn-primary" data-ir="2" data-validar>Continuar</button></div>
+                </section>
+
+                <section data-paso="2" aria-labelledby="t2" class="card card-body" hidden>
+                    <h2 id="t2" class="h4" tabindex="-1">Paso 2 de 3 · Entrega y pago</h2>
+                    <fieldset class="mb-3" aria-describedby="error-entrega">
+                        <legend class="h6">¿Cómo quieres recibir tu pedido?</legend>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="entrega" id="entrega-domicilio" value="domicilio" >
+                            <label class="form-check-label" for="entrega-domicilio">Envío a domicilio (S/ 20, gratis desde S/ 1500)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="entrega" id="entrega-recojo" value="recojo" >
+                            <label class="form-check-label" for="entrega-recojo">Recojo en tienda (gratis)</label>
+                        </div>
+                        <div id="error-entrega" class="invalid-feedback"></div>
+                    </fieldset>
+                    <fieldset class="mb-3" aria-describedby="error-pago">
+                        <legend class="h6">¿Cómo vas a pagar?</legend>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pago" id="pago-contra-entrega" value="contra-entrega" >
+                            <label class="form-check-label" for="pago-contra-entrega">Contra entrega</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pago" id="pago-billetera" value="billetera" >
+                            <label class="form-check-label" for="pago-billetera">Billetera digital al recibir</label>
+                        </div>
+                        <div id="error-pago" class="invalid-feedback"></div>
+                    </fieldset>
+                    <p class="small">Pago simulado: no cobramos nada ni te pedimos datos de tarjeta.</p>
+                    <div class="d-flex gap-2">
+                        <button type="button" class="btn btn-outline-primary" data-ir="1">Volver</button>
+                        <button type="button" class="btn btn-primary" data-ir="3" data-validar>Continuar</button>
+                    </div>
+                </section>
+
+                <section data-paso="3" aria-labelledby="t3" class="card card-body" hidden>
+                    <h2 id="t3" class="h4" tabindex="-1">Paso 3 de 3 · Resumen y confirmación</h2>
+                    <div id="resumen-pedido"></div>
+                    <div class="d-flex gap-2">
+                        <button type="button" class="btn btn-outline-primary" data-ir="2">Volver</button>
+                        <button type="submit" class="btn btn-primary">Confirmar pedido</button>
+                    </div>
+                </section>
+            </form>
+
+            <div id="resultado" role="status" class="mt-3"></div>
+        </section>
+
+    </main>
+
+    <footer class="bg-primary text-white py-3 small">
+        <div class="container">
+            CelMarket · Celulares nuevos con garantía · Precios en soles, IGV incluido
+        </div>
+    </footer>
+
+    <!-- Carrito lateral (offcanvas) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="carrito-lateral" aria-labelledby="carrito-titulo">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title h5" id="carrito-titulo">Tu carrito</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div id="carrito-lineas"></div>
+            <div id="carrito-pie" class="mt-auto pt-3" hidden>
+                <p class="fs-5 fw-bold d-flex justify-content-between">Total estimado <span id="carrito-total"></span></p>
+                <div class="d-grid gap-2">
+                    <a href="checkout.html" class="btn btn-primary">Finalizar compra</a>
+                    <a href="carrito.html" class="btn btn-outline-primary">Ver carrito completo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aviso (toast) -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="toast-aviso" class="toast text-bg-dark" role="status" aria-live="polite" aria-atomic="true">
+            <div class="toast-body"></div>
+        </div>
+    </div>
+
+    <script src="vendor/bootstrap.bundle.min.js"></script>
+    <script src="js/datos.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>
